@@ -1,0 +1,200 @@
+#board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#question {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: aqua;
+}
+
+body {
+  width: 100%;
+  background-image: url(./arcade.jpg);
+}
+
+div.timer {
+  text-align: center;
+  color: #0c0101;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  background-color: rgb(67, 0, 201);
+  border-radius: 1500px;
+  box-shadow: inset 2px 2px 3px rgb(255 255 255 / 60%), inset -2px -2px 3px rgb(0 0 0 / 60%);
+  width: 100%;
+  height: 150%;
+}
+
+
+/* Souris */
+
+
+.mousemove {
+  height: 50px;
+  width: 50px;
+  border: 8px dashed rgb(105, 137, 25);
+  position: absolute;
+  cursor: none;
+  border-radius: 50px;
+}
+
+
+/* effet */
+
+
+.box {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  background-color: yellowgreen;
+  font-size: 3em;
+  text-align: center;
+  line-height: 150px;
+  margin: 0%;
+  animation: wiggle 1s;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.4s, color 0.4s, transform 0.2s;
+}
+
+.box-clicked, .box.error, .box.success, .box.notice {
+  animation-duration: 0.8s;
+  animation-name: clignoter;
+  animation-iteration-count: infinite;
+  transition: none;
+}
+
+.box-clicked {
+  background-color: rgb(12, 125, 224);
+  color: rgb(167, 28, 180);
+  transform: scale(0.6);
+}
+
+.box.error {
+  color: red;
+  background-color: rosybrown;
+}
+
+.box.success {
+  color: green;
+  background-color: greenyellow;
+}
+
+.box.notice {
+  color: blue;
+  background-color: aqua;
+}
+
+.pagevictoire, .pagedefaite {
+  font-size: 80px;
+  text-align: center;
+  margin-top: 10px;
+  background-color: rgb(216, 216, 50);
+  animation-duration: 0.8s;
+  animation-name: clignoter;
+  animation-iteration-count: infinite;
+  transition: none;
+}
+
+.pagedefaite {
+  font-size: 190px;
+  color: rgb(15, 14, 14);
+  background-color: rgb(255, 1, 1);
+  border: 1rem solid;
+}
+
+
+
+/* Menu burger */
+
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: -250px;
+  background-image: url(./mario.jpg);
+  background-size: 200% ;
+  
+  padding-top: 60px;
+  transition: left 0.5s ease;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 40px;
+  color: #f20202;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f60101;
+  
+}
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidenav.active {
+  left: 0;
+}
+
+.sidenav .close {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+.burger-icon span {
+  display: block;
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}
+
+
+
+div#toplist{
+  color: rgb(252, 4, 4);
+background-image: url(./drapeau.webp);
+  justify-content: center;
+  text-align: center;
+  opacity: 80%;
+  border-radius: 100%;
+  font-size: 30px;
+  
+  
+}
+li{
+  list-style: none;
+}
+
+
+
+@keyframes clignoter {
+  0% { opacity: 1; }
+  40% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes wiggle {
+  from { transform: scale(0) rotate(180deg); }
+  to { transform: scale(1) rotate(0deg); }
+}
+
+@media screen and (max-width: 630px) {
+  #board { width: 100%; }
+}

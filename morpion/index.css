@@ -1,0 +1,238 @@
+body {
+ background: linear-gradient(rgb(255, 90, 194),white);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 2px;
+  margin: 20px auto;
+  justify-content: center;
+}
+
+.cell.player.success {
+  color: green;
+  background-color: greenyellow;
+  animation-duration: 0.8s;
+  animation-name: clignoter;
+  animation-iteration-count: infinite;
+  transition: none;
+  display: flex;
+}
+
+.box.success {
+  color: green;
+  background-color: greenyellow;
+}
+
+.box.notice {
+  color: blue;
+  background-color: aqua;
+}
+
+
+.pagevictoire {
+  font-size: 80px;
+  text-align: center;
+  margin-top: 0;
+  background-color: rgb(255, 88, 252);
+  animation-duration: 0.8s;
+  animation-name: clignoter;
+  animation-iteration-count: infinite;
+  transition: none;
+}
+.player.cell.player {
+  width: 10%;
+  display: table-column;
+  
+}
+
+#music-toggle {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  opacity: 70%;
+  background: none;
+  border: none;
+}
+
+div.cell {
+  color: rgb(0, 0, 0);
+  opacity: 100%;
+  font-size: 100px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(66, 90, 95);
+  opacity: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 50%;
+}
+
+.cell.player {
+  font-size: 30px;
+  background-color: rgb(27, 221, 255);
+  opacity: 60%;
+  width: 30%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.cell.winner {
+  color: green;
+  font-weight: bold;
+  background: green;
+}
+
+.cell:hover {
+  background-color: rgb(6, 90, 118);
+}
+
+.cell.winner {
+  font-size: 80px;
+
+  text-align: center;
+  margin-top: 10px;
+  background-color: rgb(216, 216, 50);
+  animation-duration: 0.8s;
+  animation-name: clignoter;
+  animation-iteration-count: infinite;
+  transition: none;
+}
+
+/* menu burger */
+
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: -250px;
+  background-image: url(./console.jpg);
+  background-size: 250%;
+  padding-top: 60px;
+  transition: left 0.5s ease;
+}
+
+/* elements du menu */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 45px;
+  color: #f70303;
+  display: block;
+  transition: 0.3s;
+  tab-size: 50cap;
+}
+
+.sidenav a:hover {
+  color: #111;
+}
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Active class */
+.sidenav.active {
+  left: 0;
+}
+
+/* le menu qui ce ferme */
+.sidenav .close {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+/* les barre du burger */
+.burger-icon span {
+  display: block;
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}
+
+
+
+.slider-1 {
+  width: 50%;
+  max-height: 100%;
+  margin: 100px auto;
+  top: 20%;
+  border: none;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.slider-1 .slider {
+  display: flex;
+  animation: slider-1 10s infinite ease-in-out;
+  height: 10%;
+  padding: 0;
+  margin: 0 ;
+  
+}
+
+.slider-1 p {
+  
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  font-size: 45px;
+  color: white;
+}
+
+
+.slider-1 p img{
+  
+
+  
+width: 20%;
+height: 10%;
+  text-align: center;
+  font-size: 45px;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+
+@keyframes slider-1 {
+  0%,
+  20% {
+    transform: translateX(0);
+  }
+  25%,
+  45% {
+    transform: translateX(-100%);
+  }
+
+  50%,
+  70% {
+    transform: translateX(-200%);
+  }
+  75%,
+  95% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(-400%);
+  }
+}

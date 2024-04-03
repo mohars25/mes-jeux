@@ -1,0 +1,100 @@
+// // Ajouter un tableau pour stocker les chronos
+// let bestTimes = JSON.parse(localStorage.getItem('bestTimes')) || [];
+
+// function showErrorAndStopTimer(clickedBox, interval) {
+//   clickedBox.classList.add("error");
+//   clearInterval(interval);
+// }
+
+// function shuffleChildren(parent) {
+//   let children = Array.from(parent.children);
+//   let i = children.length,
+//     k,
+//     temp;
+//   while (--i > 0) {
+//     k = Math.floor(Math.random() * (i + 1));
+//     temp = children[i];
+//     children[i] = children[k];
+//     children[k] = temp;
+//   }
+//   while (parent.firstChild) {
+//     parent.removeChild(parent.firstChild);
+//   }
+//   children.forEach(child => {
+//     parent.appendChild(child);
+//   });
+// }
+
+// function showReaction(type, clickedBox) {
+//   clickedBox.classList.add(type);
+//   if (type !== "success") {
+//     setTimeout(function () {
+//       clickedBox.classList.remove(type);
+//     }, 800);
+//   }
+// }
+
+// function startTimer(timerElement) {
+//   let seconds = 0;
+//   const interval = setInterval(function () {
+//     seconds++;
+//     timerElement.innerText = seconds + "s";
+//   }, 1000);
+//   return interval;
+// }
+
+// function showBestTimes() {
+//   const bestTimesElement = document.querySelector(".best-times");
+//   bestTimesElement.innerHTML = ''; // Clear existing times
+//   bestTimes.forEach(function(time, index) {
+//     const timeEntry = document.createElement("div");
+//     timeEntry.innerText = `${index + 1}: ${time}s`;
+//     bestTimesElement.appendChild(timeEntry);
+//   });
+// }
+
+// function showVictoryPage(seconds) {
+//   const victoryPage = document.createElement("div");
+//   victoryPage.classList.add("victory-page");
+//   victoryPage.innerText = "Victoire! Temps: " + seconds + "s";
+//   document.body.appendChild(victoryPage);
+
+//   // S'assurer que le tableau des meilleurs temps ne possède pas plus de 5 éléments
+//   bestTimes.push(seconds);
+//   bestTimes.sort((a, b) => a • b);
+//   bestTimes = bestTimes.slice(0, 5);
+
+//   // Sauvegarder les meilleurs temps dans localStorage
+//   localStorage.setItem('bestTimes', JSON.stringify(bestTimes));
+
+//   // Afficher les meilleurs temps
+//   showBestTimes();
+// }
+
+// function playSuccessSound() {
+//   const audio = new Audio('chemin/vers/votre/fichier/audio.mp3');
+//   audio.play();
+// }
+
+// function showLostMessage() {
+//   const lostMessage = document.createElement("div");
+//   lostMessage.classList.add("lost-message");
+//   lostMessage.innerText = "Tu as perdu";
+//   document.body.appendChild(lostMessage);
+// }
+
+// const board = document.querySelector("#board");
+// const timerElement = document.querySelector(".timer");
+// const bestTimesElement = document.querySelector(".best-times");
+
+// let interval = null;
+// let nb = 1;
+
+// shuffleChildren(board);
+
+// board.addEventListener("click", function(event) {
+//   if (event.target.classList.contains("box")) {
+//     const boxNumber = parseInt(event.target.innerText, 10);
+//     if (boxNumber === nb) {
+//       if (nb === 1) {
+//         // Commence le timer au premier cli
